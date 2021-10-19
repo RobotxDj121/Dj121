@@ -1,21 +1,29 @@
-const { MessageEmbed } = require("discord.js");
+const { Client, Collection, MessageEmbed } = require(`discord.js`);
+const { 
+  PREFIX, 
+} = require(`../config.json`);
+
+  
+
 
 module.exports = {
   name: "invite",
   aliases: ["inv"],
-  description: "Invite the bot to your server.",
+  cooldown: 8,
+  description: "**all commands**",
   execute(message) {
+    let commands = message.client.commands.array();
 
-    let inviteEmbed = new MessageEmbed()
-      .setTitle("Add us to your server!")
-      .setDescription("Love using Harmony? Great, Thank you! Consider adding it to your server")
-      .setColor("#F0EAD6")
-      .setAuthor('Harmony','https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif')
-      .setThumbnail(message.guild.iconURL())
-      .addField(`Use the following link to add Harmony to your discord server`, 'https://discord.com/api/oauth2/authorize?client_id=767885987740254291&permissions=49572160&scope=bot', true)
+    let helpEmbed = new MessageEmbed()
+    .setDescription(`
 
-    inviteEmbed.setTimestamp();
+ [Click here](link bot) **add bot .**
+`)
 
-    return message.channel.send(inviteEmbed).catch(console.error);
+  
+   .setColor("YELLOW");
+   message.react("")
+    return message.channel.send(helpEmbed).catch(console.error);
+
   }
 };
