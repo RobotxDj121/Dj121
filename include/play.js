@@ -138,10 +138,11 @@ module.exports = {
 
   try {
       let embed = new MessageEmbed()
+      .setTitle(""+song.title)
       .setColor("#F0EAD6")
-      .setAuthor(`Started playing: ${song.title}`,'https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg')
+  ////    .setAuthor(`Started playing: ${song.title}`,'https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg')
       var playingMessage = await queue.textChannel.send(embed);
-      var playingMessage = await queue.textChannel.send(`${song.url}`);
+  //    var playingMessage = await queue.textChannel.send(`${song.url}`);
     
       await playingMessage.react("⏭");
       await playingMessage.react("⏯");
