@@ -3,40 +3,36 @@
 ////////////////////////////
 const createBar = require("string-progressbar");
 const { Client, Collection, MessageEmbed } = require("discord.js");
-const { attentionembed } = require("../util/attentionembed"); 
-const {
-  approveemoji,
-  denyemoji,
-  PREFIX,
-} = require(`../config.json`);
+const { attentionembed } = require("../util/attentionembed");
+const { PREFIX } = require(`../config.json`);
 ////////////////////////////
 //////COMMAND BEGIN/////////
 ////////////////////////////
 module.exports = {
   name: "nowplaying",
   aliases: ['np',"now-playing","current","current-song"],
-  description: "Show current song",
+  description: "(np)Show current song",
   cooldown: 5,
   edesc: `Type nowplaying in chat, to see which song is currently playing! As well as how long it will take until its finished\nUsage: ${PREFIX}nowplaying`,
-  
+
 execute(message) {
     //if not in a guild return
     if(!message.guild) return;
     //react with approve emoji
-    message.react(approveemoji)
+    message.react("")
     //get Server Queue
     const queue = message.client.queue.get(message.guild.id);
     //if nothing playing error
     if (!queue) return attentionembed(message, "There is nothing playing.").catch(console.error);
-    //Define the current song 
+    //Define the current song
     const song = queue.songs[0];
     //get current song duration in s
-    let minutes = song.duration.split(":")[0];   
-    let seconds = song.duration.split(":")[1];    
-    let ms = (Number(minutes)*60+Number(seconds));   
+    let minutes = song.duration.split(":")[0];
+    let seconds = song.duration.split(":")[1];
+    let ms = (Number(minutes)*60+Number(seconds));
     //get thumbnail
     let thumb;
-    if (song.thumbnail === undefined) thumb = "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg";
+    if (song.thumbnail === undefined) thumb = "https://images-ext-1.discordapp.net/external/4z_YXY0agtILa9_QJQ_yVMVJWn7aVGqXIGleNhwfddM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/791171444238319618/fa5c61a82be7374394bbc68fad91ed23.png";
     else thumb = song.thumbnail.url;
     //define current time
     const seek = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000;
@@ -45,19 +41,19 @@ execute(message) {
     //define embed
     let nowPlaying = new MessageEmbed()
           .setTitle("**Now playing**")
-         .addField("Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+          .addField("Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
           .addField("Length:", `\`${song.duration} Minutes\``, true)
           .setColor("YELLOW")
-          .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
+          
       //if its a stream
       if(ms >= 10000) {
         nowPlaying.addField("\u200b", "🔴 LIVE", false);
         //send approve msg
         return message.channel.send(nowPlaying);
       }
-      //If its not a stream 
+      //If its not a stream
       if (ms > 0 && ms<10000) {
-        nowPlaying.addField("\u200b", "**``[" + createBar((ms == 0 ? seek : ms), seek, 25, "▬", "🔘")[0] + "]``**\n**" + "\n[" + new Date(seek * 1000).toISOString().substr(11, 8) + " / " + (ms == 0 ? " ◉ LIVE" : new Date(ms * 1000).toISOString().substr(11, 8))+ "]**" + "\n" + "\n **Time Remaining:**" + "``" + new Date(left * 1000).toISOString().substr(11, 8) + "``", false );
+       
         //send approve msg
         return message.channel.send(nowPlaying);
       }
