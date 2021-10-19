@@ -163,9 +163,10 @@ async execute(message, args, client) {
       serverQueue.songs.push(song);
       //the new song embed
       const newsong = new MessageEmbed()
-        .setTitle(":notes:" + song.title)
+        .setTitle("▶️ "+song.title)
+         .setURL(song.url)
         .setColor("YELLOW")
-        .setThumbnail(thumb)
+        .setThumbnail(`https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg`)
         .setURL(song.url)
         .setDescription(`\`\`\`Has been added to the Queue.\`\`\``)
         .addField("Estimated time until playing:", `\`${estimatedtime}\``, true)
