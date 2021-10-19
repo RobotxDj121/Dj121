@@ -287,7 +287,7 @@ module.exports = {
         let ms = (Number(minutes)*60+Number(seconds));   
         //get thumbnail
         let thumb;
-        if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif";
+        if (song.thumbnail === undefined) thumb = "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg";
         else thumb = song.thumbnail.url;
         //define current time
         const seek = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000;
@@ -295,10 +295,11 @@ module.exports = {
         const left = ms - seek;
         //define embed
         let nowPlaying = new MessageEmbed()
-          .setAuthor('♪Now playing♪','https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif','http://harmonymusic.tk')
+         .setTitle("Now playing")
           .setDescription(`[**${song.title}**](${song.url})`)
-          .setThumbnail(song.thumbnail.url)
-          .setColor("#F0EAD6")
+          .addField("Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+          .addField("Length:", `\`${song.duration} Minutes\``, true)
+          .setColor("YELLOW")
           .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
       //if its a stream
       if(ms >= 10000) {
@@ -345,7 +346,7 @@ module.exports = {
           if (!canModifyQueue(member)) return;
           let lyrics = null;
           let temEmbed = new MessageEmbed()
-          .setAuthor("Searching...", "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif").setFooter("Lyrics")
+          .setAuthor("Searching...", "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg").setFooter("Lyrics")
           .setColor("#F0EAD6")
           let result = await message.channel.send(temEmbed)
           try {
