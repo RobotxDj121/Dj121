@@ -142,6 +142,10 @@ module.exports = {
        .setURL(song.url)
       .setColor("YELLOW")
       .setImage(thumb)
+      .setThumbnail(`https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg`)
+      .addField("Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+       .addField("Length:", `\`${song.duration} Minutes\``, true)
+       .addField("Volume:", `\`100\``, true)
   ////    .setAuthor(`Started playing: ${song.title}`,'https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg')
       var playingMessage = await queue.textChannel.send(embed);
   //    var playingMessage = await queue.textChannel.send(`${song.url}`);
