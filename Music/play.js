@@ -168,9 +168,10 @@ async execute(message, args, client) {
         .setColor("YELLOW")
         .setThumbnail(`https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg`)
         .setURL(song.url)
-        .setDescription(`\`\`\`Has been added to the Queue.\`\`\``)
-        .addField("Estimated time until playing:", `\`${estimatedtime}\``, true)
-        .addField("Position in queue", `**\`${serverQueue.songs.length - 1}\`**`, true)
+        .addField("▶️ Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+        .addField("▶️ Length:", `\`${song.duration} Minutes\``, true)
+        .addField("▶️ Volume:", `\`100\``, true)
+        .addField("▶️ Position in queue:", `**\`${serverQueue.songs.length - 1}\`**`, true)
         .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
       //send the Embed into the Queue Channel
         return serverQueue.textChannel
