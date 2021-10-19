@@ -44,7 +44,7 @@ execute(message) {
     const left = ms - seek;
     //define embed
     let nowPlaying = new MessageEmbed()
-          .setAuthor('♪Now playing♪','https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg')
+          .setTitle("**Now playing**")
          .addField("Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
           .addField("Length:", `\`${song.duration} Minutes\``, true)
           .setColor("YELLOW")
