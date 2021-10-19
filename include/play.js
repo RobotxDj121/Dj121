@@ -25,8 +25,8 @@ module.exports = {
     if (!song) {
       queue.channel.leave();
       message.client.queue.delete(message.guild.id);
-      const endembed = new MessageEmbed().setColor("#F0EAD6")
-        .setAuthor(`Music Queue ended.`, "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif")
+      const endembed = new MessageEmbed().setColor("YELLOW")
+        .setAuthor(`Music Queue ended.`, "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg")
       return queue.textChannel.send(endembed).catch(console.error);
     }
 
@@ -133,15 +133,16 @@ module.exports = {
     }
     
   let thumb;
-    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif";
+    if (song.thumbnail === undefined) thumb = "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg";
     else thumb = song.thumbnail.url;
 
   try {
       let embed = new MessageEmbed()
       .setColor("#F0EAD6")
-      .setAuthor(`Started playing: ${song.title}`,'https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif')
+      .setAuthor(`Started playing: ${song.title}`,'https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg')
       var playingMessage = await queue.textChannel.send(embed);
       var playingMessage = await queue.textChannel.send(`${song.url}`);
+    
       await playingMessage.react("⏭");
       await playingMessage.react("⏯");
       await playingMessage.react("🔉");
