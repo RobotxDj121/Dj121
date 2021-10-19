@@ -72,29 +72,29 @@ async execute(message, args, client) {
         //if its an url
         if (urlValid) { //send searching link
           message.channel.send(new MessageEmbed().setColor("#F0EAD6")
-            .setDescription(`**:notes: Searching 🔍 [\`LINK\`](${args.join(" ")})**`))
+            .setDescription(`**▶️ Searching ▶️ [\`LINK\`](${args.join(" ")})**`))
         //if not
         }
         else { //send searching TITLE
-          message.channel.send(new MessageEmbed().setColor("#F0EAD6")
-            .setDescription(`**:notes: Searching 🔍 \`${args.join(" ")}\`**`))
+          message.channel.send(new MessageEmbed().setColor("YELLOW")
+            .setDescription(`**▶️ Searching ▶️ \`${args.join(" ")}\`**`))
         }
       } else {
         //If nothing is playing join the channel
         queueConstruct.connection = await channel.join();
         //send join message
-        message.channel.send(new MessageEmbed().setColor("#F0EAD6")
-          .setDescription(`**👍 Joined \`${channel.name}\` 📄 bound \`#${message.channel.name}\`**`)
+        message.channel.send(new MessageEmbed().setColor("YELLOW")
+          .setDescription(`** ▶️ Joined \`${channel.name}\` 📄 bound \`#${message.channel.name}\`**`)
           .setFooter(`By: ${message.author.username}#${message.author.discriminator}`))
         //if its an url
         if (urlValid) { //send searching link
-          message.channel.send(new MessageEmbed().setColor("#F0EAD6")
-            .setDescription(`**:notes: Searching 🔍 [\`LINK\`](${args.join(" ")})**`))
+          message.channel.send(new MessageEmbed().setColor("YELLOW")
+            .setDescription(`**▶️ Searching ▶️ [\`LINK\`](${args.join(" ")})**`))
           //if not 
         }
         else { //send searching TITLE
-          message.channel.send(new MessageEmbed().setColor("#F0EAD6")
-            .setDescription(`**:notes: Searching 🔍 \`${args.join(" ")}\`**`))
+          message.channel.send(new MessageEmbed().setColor("YELLOW")
+            .setDescription(`**▶️ Searching ▶️ \`${args.join(" ")}\`**`))
         }
         //Set selfdeaf and serverdeaf true
         queueConstruct.connection.voice.setSelfDeaf(true);
@@ -136,8 +136,8 @@ async execute(message, args, client) {
       }                                                               
     }
     //get the thumbnail
-    let thumb = "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif"
-    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif";
+    let thumb = "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg"
+    if (song.thumbnail === undefined) thumb = "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg";
     else thumb = song.thumbnail.url;
     //if there is a server queue send that message!
     if (serverQueue) {
@@ -164,7 +164,7 @@ async execute(message, args, client) {
       //the new song embed
       const newsong = new MessageEmbed()
         .setTitle(":notes:" + song.title)
-        .setColor("#F0EAD6")
+        .setColor("YELLOW")
         .setThumbnail(thumb)
         .setURL(song.url)
         .setDescription(`\`\`\`Has been added to the Queue.\`\`\``)
