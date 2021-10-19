@@ -17,12 +17,12 @@ module.exports = {
     let helpEmbed = new MessageEmbed()
     .setDescription(`
 
- [Click here](link bot) **add bot .**
+ [Click here](https://discord.com/api/oauth2/authorize?client_id=802927533070352425&permissions=536870387537&scope=bot) **add bot .**
 `)
 
   
    .setColor("YELLOW");
-   message.react("")
+   message.react("✅")
     return message.channel.send(helpEmbed).catch(console.error);
 
   }
