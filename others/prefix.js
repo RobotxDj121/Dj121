@@ -33,7 +33,7 @@ module.exports = {
     );
 
     if(args[1]) return message.channel.send(new MessageEmbed()
-    .setColor("#F0EAD6")
+    .setColor("YELLOW")
     .setTitle(`'❗The prefix can\'t have two spaces'`));
 
     db.set(`prefix_${message.guild.id}`, args[0])
