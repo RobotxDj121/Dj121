@@ -164,9 +164,9 @@ client.on("guildDelete", guild => {
   .setColor("YELLOW")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle( "❌   Kicked Me In This Server!")
-  .addField("  Server Name:  ",  `${guild.name}`")
-  .addField(" Server Owner: ",   `${guild.owner}`" )
-  .addField(" Server Id: ",    `${guild.id}`")
+  .addField("  Server Name:  ",  `${guild.name}`)
+  .addField(" Server Owner: ",   `${guild.owner}`)
+  .addField(" Server Id: ",    `${guild.id}`)
   .addField(" Member Count: ", `${guild.memberCount}`)
  
   channel.send(embed);
