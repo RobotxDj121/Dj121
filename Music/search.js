@@ -40,15 +40,15 @@ async execute(message,args,client) {
     const search = args.join(" ");
     //define a temporary Loading Embed
     let temEmbed = new MessageEmbed()
-    .setAuthor("Searching...", "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif")
-    .setColor("#F0EAD6")
+    .setAuthor("Searching...", "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg")
+    .setColor("YELLOW")
     //define the Result Embed
     let resultsEmbed = new MessageEmbed()
       .setTitle("Results for ")
       .setDescription(`\`${search}\``)
-      .setColor("#F0EAD6")
-      .setAuthor("Search results!!", "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif","http://harmonymusic.tk")
-      .setFooter("Response with your favorite number","https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif")
+      .setColor("YELLOW")
+      .setAuthor("Search results!!", "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg","")
+      .setFooter("Response with your favorite number","https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg")
     //try to find top 5 results
     try {
       //find them
