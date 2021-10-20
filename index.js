@@ -146,7 +146,7 @@ function delay(delayInms) {
 }
 
 
-```client.on("guildCreate", guild => {
+  client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("900476440372457472");
   let embed = new MessageEmbed().setColor("YELLOW")
   .setAuthor(client.user.username, client.user.avatarURL())
@@ -170,4 +170,4 @@ client.on("guildDelete", guild => {
   .addField(" Member Count: ", ${guild.memberCount})
  
   channel.send(embed);
-});```
+});
