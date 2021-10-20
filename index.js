@@ -35,7 +35,7 @@ client.on(`ready`, () => {
       });
       
 
-      client.user.setActivity(`${PREFIX}help | ${client.guilds.cache.size} Server`, { type: "STREAMING",
+      client.user.setActivity(`${PREFIX}help | ${client.guilds.cache.size} Server`, { type: "PLAYING",
       url: "https://www.twitch.tv/nocopyrightsounds"});
    
   
@@ -81,7 +81,7 @@ client.on(`message`, async (message) => {
 
   //information message when the bot has been tagged
   if(message.content.includes(client.user.id)) {
-    message.reply(new Discord.MessageEmbed().setColor("#F0EAD6").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
+    message.reply(new Discord.MessageEmbed().setColor("YELLOW").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
   } 
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
@@ -120,7 +120,7 @@ client.on(`message`, async (message) => {
    if (now < expirationTime) {
      const timeLeft = (expirationTime - now) / 1000;
      return message.reply(
-      new MessageEmbed().setColor("#F0EAD6")
+      new MessageEmbed().setColor("YELLOW")
       .setTitle(`:x: Please wait \`${timeLeft.toFixed(1)} seconds\` before reusing the \`${prefix}${command.name}\`!`)    
      );
    }
@@ -131,7 +131,7 @@ client.on(`message`, async (message) => {
    command.execute(message, args, client);
  } catch (error) {
    console.error(error);
-   message.reply( new MessageEmbed().setColor("#F0EAD6")
+   message.reply( new MessageEmbed().setColor("YELLOW")
    .setTitle(`:x: There was an error executing that command.`)).catch(console.error);
  }
 
