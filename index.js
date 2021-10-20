@@ -151,10 +151,10 @@ function delay(delayInms) {
   let embed = new MessageEmbed().setColor("YELLOW")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle( "✅  **I Joined This Server!**")
-  .addField("  Server Name:  ", ` **${guild.name}** `)
-  .addField(" Server Owner: ",   `**__${guild.owner}__** `)
-  .addField(" Server Id: ",  `**${guild.id}** ` )
-  .addField(" Member Count: ",  `**__${guild.memberCount}__**` )
+  .addField("  Server Name:  ", " **${guild.name}** ")
+  .addField(" Server Owner: ",   "**__${guild.owner}__** ")
+  .addField(" Server Id: ",  "**${guild.id}** ")
+  .addField(" Member Count: ",  "**__${guild.memberCount}__**" )
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
@@ -164,10 +164,10 @@ client.on("guildDelete", guild => {
   .setColor("YELLOW")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle( "❌  ** Kicked Me In This Server!**")
-  .addField("  Server Name:  ",  `**${guild.name}**`)
-  .addField(" Server Owner: ",   `**__${guild.owner}__**` )
-  .addField(" Server Id: ",  `**${guild.id}**`  )
-  .addField(" Member Count: ",  `**__${guild.memberCount}__**` )
+  .addField("  Server Name:  ",  "**${guild.name}**")
+  .addField(" Server Owner: ",   "**__${guild.owner}__**" )
+  .addField(" Server Id: ",  "**${guild.id}**" )
+  .addField(" Member Count: ",  "**__${guild.memberCount}__**")
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });```
