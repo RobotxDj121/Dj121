@@ -28,7 +28,7 @@ execute(message, args) {
     if (!canModifyQueue(message.member)) return;
     //define Info Embed
     const volinfoembed = new MessageEmbed()
-    .setColor("#F0EAD6")
+    .setColor("YELLOW")
     .setTitle(`🔊 Volume is: \`${queue.volume}%\``)
     //if no args return info embed   			 
     if (!args[0]) return message.channel.send(volinfoembed).catch(console.error);
