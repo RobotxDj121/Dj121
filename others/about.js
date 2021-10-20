@@ -17,7 +17,9 @@ module.exports = {
     let helpEmbed = new MessageEmbed()
     .setDescription(`
 
- **Ths bot create by Fsociety link server ** [LINK SERVER](https://discord.gg/9QJh3n7rqz) ** JOIN SERVER **
+ **Ths bot create by Fsociety link server ** 
+ [LINK SERVER](https://discord.gg/9QJh3n7rqz)
+ ** JOIN SERVER **
 `)
 
   
