@@ -28,7 +28,7 @@ module.exports = {
     .setFooter('Please provide a new prefix')
     );
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply(new MessageEmbed()
-    .setColor("#F0EAD6")
+    .setColor("YELLOW")
     .setTitle(`🚫 You don\'t have permission for this Command!`)
     );
 
