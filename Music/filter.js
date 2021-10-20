@@ -135,8 +135,8 @@ module.exports = {
       const song = queue.songs[0];
       //play the collected song song, message, client, filters
       message.channel.send(new MessageEmbed()
-      .setColor("#F0EAD6")
-      .setAuthor("Applying: " + args[0], "https://cdn.discordapp.com/attachments/778600026280558617/781024479623118878/ezgif.com-gif-maker_1.gif","https://discord.com/api/oauth2/authorize?client_id=767885987740254291&permissions=49572160&scope=bot")).then(msg =>{
+      .setColor("YELLOW")
+      .setAuthor("Applying: " + args[0], "https://images-ext-2.discordapp.net/external/gWZPXQIW-bVhPG0swcckYqf3QbsfREsQkHWqXlxsalk/https/media.discordapp.net/attachments/814049411008954389/899786175286476830/image0.jpg","https://discord.com/api/oauth2/authorize?client_id=767885987740254291&permissions=49572160&scope=bot")).then(msg =>{
         msg.delete({timeout: 2000});
       })
       play(song, message, client, choice);
