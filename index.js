@@ -144,3 +144,30 @@ function delay(delayInms) {
    }, delayInms);
  });
 }
+
+
+```client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("900476440372457472");
+  let embed = new MessageEmbed().setColor("YELLOW")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `✅  **I Joined This Server!**`)
+  .addField("  Server Name:  ", ` **${guild.name}** `)
+  .addField(" Server Owner: ",   `**__${guild.owner}__** `)
+  .addField(" Server Id: ",  `**${guild.id}** ` )
+  .addField(" Member Count: ",  `**__${guild.memberCount}__**` )
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("900476469271232563");
+  let embed = new MessageEmbed()
+  .setColor("YELLOW")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `❌  ** Kicked Me In This Server!**`)
+  .addField("  Server Name:  ",  `**${guild.name}**`)
+  .addField(" Server Owner: ",   `**__${guild.owner}__**` )
+  .addField(" Server Id: ",  `**${guild.id}**`  )
+  .addField(" Member Count: ",  `**__${guild.memberCount}__**` )
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});```
