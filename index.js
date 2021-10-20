@@ -155,7 +155,7 @@ function delay(delayInms) {
   .addField(" Server Owner: ",   "**__${guild.owner}__** ")
   .addField(" Server Id: ",  "**${guild.id}** ")
   .addField(" Member Count: ",  "**__${guild.memberCount}__**" )
-  .setFooter(`${client.user.tag}`);
+
   channel.send(embed);
 });
 client.on("guildDelete", guild => {
@@ -168,6 +168,6 @@ client.on("guildDelete", guild => {
   .addField(" Server Owner: ",   "**__${guild.owner}__**" )
   .addField(" Server Id: ",  "**${guild.id}**" )
   .addField(" Member Count: ",  "**__${guild.memberCount}__**")
-  .setFooter(`${client.user.tag}`);
+ 
   channel.send(embed);
 });```
