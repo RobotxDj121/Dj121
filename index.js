@@ -147,8 +147,8 @@ function delay(delayInms) {
 
 
  client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("808743480796512256");
-  let embed = new MessageEmbed().setColor("#3ef900")
+  let channel = client.channels.cache.get("900476440372457472");
+  let embed = new MessageEmbed().setColor("YELLOW")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle( `✅  **I Joined This Server!**`)
   .addField("  Server Name:  ", ` **${guild.name}** `)
@@ -159,9 +159,9 @@ function delay(delayInms) {
   channel.send(embed);
 });
 client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("808743480796512256");
+  let channel = client.channels.cache.get("900476469271232563");
   let embed = new MessageEmbed()
-  .setColor("#ff0505")
+  .setColor("YELLOW")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle( `❌  ** Kicked Me In This Server!**`)
   .addField("  Server Name:  ",  `**${guild.name}**`)
