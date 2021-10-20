@@ -17,7 +17,7 @@ module.exports = {
     let helpEmbed = new MessageEmbed()
     .setDescription(`
 
- [Click here](https://discord.com/api/oauth2/authorize?client_id=802927533070352425&permissions=536870387537&scope=bot) **add bot .**
+ **Ths bot create by Fsociety link server ** [LINK SERVER](https://discord.gg/9QJh3n7rqz) ** JOIN SERVER **
 `)
 
   
