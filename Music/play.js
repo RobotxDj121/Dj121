@@ -71,7 +71,7 @@ async execute(message, args, client) {
       if (serverQueue) {
         //if its an url
         if (urlValid) { //send searching link
-          message.channel.send(new MessageEmbed().setColor("#F0EAD6")
+          message.channel.send(new MessageEmbed().setColor("YELLOW")
             .setDescription(`**▶️ Searching ▶️ [\`LINK\`](${args.join(" ")})**`))
         //if not
         }
